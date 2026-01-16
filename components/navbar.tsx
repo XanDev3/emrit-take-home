@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { SignInModal } from './auth/sign-in-modal'
 import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 
 export function Navbar() {
   const [isSignInOpen, setIsSignInOpen] = useState(false)
@@ -51,6 +52,9 @@ export function Navbar() {
             >
               Sign In
             </Button>
+            {/* RainbowKit Button - Metamask */}
+            <ConnectButton accountStatus="address" chainStatus="name" >
+            </ConnectButton>
           </div>
 
           {/* Mobile Menu Button */}
